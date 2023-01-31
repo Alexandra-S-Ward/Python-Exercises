@@ -148,3 +148,82 @@ lst1.extend(lst3)
 lst1 = "".join(lst1)
 result = re.sub(r'(?<=[a-zA-Z0-9])[^a-zA-Z0-9\s]+(?=[a-zA-Z0-9])', " ", lst1)
 print(result)
+
+# List Comprehension
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+        
+    print([[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if i+j+k!=n])
+
+# List Split
+def split_and_join(line):
+    line = line.split(" ")
+    return "-".join(line)
+
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+
+# String mutation
+def mutate_string(string, position, character):
+    return f'{string[:position]}{character}{string[position+1:]}'
+
+#Count Substring
+def count_substring(string, sub_string):
+    cnt = 0
+    if sub_string not in string:
+        return cnt
+    else:
+        for i,char in enumerate(string):
+            if char == sub_string[0]:
+                if string[i:i+len(sub_string)] == sub_string:
+                    cnt+=1
+        return cnt
+
+# String Validators
+if __name__ == '__main__':
+    s = input()
+    print(True in [c.isalnum() for c in s])
+    print(True in [c.isalpha() for c in s])
+    print(True in [c.isdigit() for c in s])
+    print(True in [c.islower() for c in s])
+    print(True in [c.isupper() for c in s])
+
+#Swap Cases
+def swap_case(s):
+    return "".join([c.upper() if c.islower() else c.lower() for c in s])
+
+# Text justification
+#Replace all ______ with rjust, ljust or center. 
+
+thickness = int(input()) #This must be an odd number
+c = 'H'
+
+#Top Cone
+for i in range(thickness):
+    print((c*i).rjust(thickness-1)+c+(c*i).ljust(thickness-1))
+
+#Top Pillars
+for i in range(thickness+1):
+    print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))
+
+#Middle Belt
+for i in range((thickness+1)//2):
+    print((c*thickness*5).center(thickness*6))    
+
+#Bottom Pillars
+for i in range(thickness+1):
+    print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))    
+
+#Bottom Cone
+for i in range(thickness):
+    print(((c*(thickness-i-1)).rjust(thickness)+c+(c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6))
+
+# Text Wrap
+def wrap(string, max_width):
+    wrapped = textwrap.fill(string,max_width)
+    return wrapped
