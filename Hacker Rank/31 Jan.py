@@ -259,3 +259,23 @@ if __name__ == '__main__':
                 lst.pop()
             elif user_in[0] == 'reverse':
                 lst.reverse()
+# Set exercise
+def average(array):
+    array = set(array)
+    return sum(array)/len(array)
+    # your code goes here
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+
+# Set Symmetric Differences
+_, m_val = input(), set(map(int, set(input().split(" "))))
+_, n_val = input(), set(map(int, set(input().split(" "))))
+
+s_d = sorted(list(m_val.symmetric_difference(n_val)))
+
+for i in s_d:
+    print(i)
