@@ -227,3 +227,11 @@ for i in range(thickness):
 def wrap(string, max_width):
     wrapped = textwrap.fill(string,max_width)
     return wrapped
+
+# Capitlise first letter
+def solve(s):
+    res = []
+    strs = s.split(" ")
+    for string in strs:
+        res.append("".join([c.upper() if i == 0 else c for i, c in enumerate(string)]))
+    return " ".join(res)
