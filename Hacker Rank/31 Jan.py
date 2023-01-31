@@ -235,3 +235,27 @@ def solve(s):
     for string in strs:
         res.append("".join([c.upper() if i == 0 else c for i, c in enumerate(string)]))
     return " ".join(res)
+
+# Lists
+if __name__ == '__main__':
+    N = int(input())
+    lst = []
+    for i in range(N):
+        user_in = input().split(" ")
+        if len(user_in) == 3:
+            lst.insert(int(user_in[1]),int(user_in[2]))
+        elif len(user_in) == 2:
+            if user_in[0] == 'remove':
+                lst.remove(int(user_in[1]))
+            if user_in[0] == 'append':
+                lst.append(int(user_in[1]))
+        else:
+            if user_in[0] == 'print':
+                print(lst)
+            elif user_in[0] == 'sort':
+                lst.sort()
+
+            elif user_in[0] == 'pop':
+                lst.pop()
+            elif user_in[0] == 'reverse':
+                lst.reverse()
