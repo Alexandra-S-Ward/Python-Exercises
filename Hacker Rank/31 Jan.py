@@ -279,3 +279,68 @@ s_d = sorted(list(m_val.symmetric_difference(n_val)))
 
 for i in s_d:
     print(i)
+
+# Happiness with sets
+
+m, n = map(int, input().split())
+N = list(map(int,input().split()))
+A = set(map(int, input().split()))
+B = set(map(int, input().split()))
+happiness = 0
+
+for i in N:
+    happiness += (1 if i in A else(-1 if i in B else 0))
+
+print(happiness)
+
+# set.add()
+nm = int(input())
+A = set()
+
+for i in range(nm):
+    A.add(input())
+
+print(len(A))
+
+# set.union()
+n = int(input())
+N = set(map(int, input().split()))
+b = int(input())
+B = set(map(int, input().split()))
+
+print(len(N.union(B)))
+
+# set.intersection()
+n = int(input())
+N = set(map(int, input().split()))
+b = int(input())
+B = set(map(int, input().split()))
+
+print(len(N.intersection(B)))
+
+#set .difference()
+n = int(input())
+N = set(map(int, input().split()))
+b = int(input())
+B = set(map(int, input().split()))
+
+print(len(N.difference(B)))
+
+# symmetric difference
+n = int(input())
+N = set(map(int, input().split()))
+b = int(input())
+B = set(map(int, input().split()))
+
+print(len(N.symmetric_difference(B)))
+
+# numpy arrays
+def arrays(arr):
+    # complete this function
+    # use numpy.array
+    return numpy.array(arr, float)[::-1]
+
+# numpy reshaping
+lst = input().split()
+arr = numpy.array(lst, int)
+print(numpy.reshape(arr,(3,3)))
